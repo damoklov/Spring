@@ -46,18 +46,7 @@ public class StudentsController {
         return ResponseEntity.status(status).build();
     }
 
-//    @PutMapping(path = "/{id}")
-//    public ResponseEntity<Object> updateStudent(final @PathVariable("id") Integer studentId, final @RequestBody Student student) {
-//        HttpStatus status;
-//        student.setId(studentId);
-//        if (students.containsKey(studentId)) {
-//            students.put(studentId, student);
-//            status = HttpStatus.OK;
-//        } else {
-//            status = HttpStatus.NOT_FOUND;
-//        }
-//        return ResponseEntity.status(status).build();
-//    }
+
 
 
     @PutMapping(path = "/{id}")
