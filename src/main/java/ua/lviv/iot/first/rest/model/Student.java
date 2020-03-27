@@ -1,9 +1,19 @@
 package ua.lviv.iot.first.rest.model;
 
+
+
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+
+@Entity
 public class Student {
 
     private String firstName;
     private String lastName;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     public Student(){

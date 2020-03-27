@@ -1,10 +1,12 @@
 package ua.lviv.iot.first.rest.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import ua.lviv.iot.first.rest.business.StudentService;
 import ua.lviv.iot.first.rest.model.Student;
 
 import java.util.HashMap;
@@ -21,7 +23,8 @@ public class StudentsController {
     private Map<Integer, Student> students = new HashMap<>();
 
     private AtomicInteger idCounter = new AtomicInteger();
-
+    @Autowired
+    private StudentService studentService;
 
     @GetMapping
     public List<Student> getStudents() {
@@ -47,14 +50,12 @@ public class StudentsController {
     }
 
 
-
-
     @PutMapping(path = "/{id}")
     public ResponseEntity<Student> updateStudent(final @PathVariable("id") Integer studentId,
-                                                final @RequestBody Student student) {
+                                                 final @RequestBody Student student) {
         HttpStatus status;
         student.setId(studentId);
-        if(students.containsKey(studentId)){
+        if (students.containsKey(studentId)) {
             students.put(studentId, student);
             status = HttpStatus.OK;
         } else {
