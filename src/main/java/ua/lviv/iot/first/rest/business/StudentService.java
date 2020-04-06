@@ -12,11 +12,16 @@ import java.util.List;
 public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
-    public Student createStudent(Student student){
+
+    public Student createStudent(Student student) {
         return studentRepository.save(student);
     }
 
     public List<Student> findAll() {
         return studentRepository.findAll();
+    }
+
+    public List<Student> getAllByFirstName(String firstName) {
+        return studentRepository.findAllByFirstName(firstName);
     }
 }

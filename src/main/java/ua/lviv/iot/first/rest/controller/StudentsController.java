@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import ua.lviv.iot.first.rest.business.StudentService;
 import ua.lviv.iot.first.rest.model.Student;
 
+import javax.websocket.server.PathParam;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,8 +28,11 @@ public class StudentsController {
     private StudentService studentService;
 
     @GetMapping
-    public List<Student> getStudents() {
-        return studentService.findAll();
+    public List<Student> getStudents(final @RequestParam(name ="firstName", required = false) String firstName) {
+        if (firstName == null){
+            return  studentService.findAll();
+        }
+        return studentService.getAllByFirstName(firstName);
 
     }
 
