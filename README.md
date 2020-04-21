@@ -10,13 +10,13 @@
 2. Reorganized imports
 3. Fixed star imports
 ## Checkstyle results
-![checkstyle](checkstyle.png)
+![checkstyle](review/checkstyle.png)
 ## Recommendations
 1. Add CRUD functionality to Subject and Group in controllers
 2. Remove HashMap completely from StudentsController
 ## Misconfiguration
 1. Some methods do not work for Subject and Group, therefore I am unable to test them
 ### POST method on Subjects
-![subjects](subjects405.png)
+![subjects](review/subjects405.png)
 ### POST method on Groups
-![groups](groups405.png)
+![groups](review/groups405.png)
