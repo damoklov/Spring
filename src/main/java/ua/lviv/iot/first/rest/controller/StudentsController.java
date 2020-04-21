@@ -5,13 +5,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import ua.lviv.iot.first.rest.business.StudentService;
 import ua.lviv.iot.first.rest.model.Student;
 
-import javax.websocket.server.PathParam;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -24,13 +21,14 @@ public class StudentsController {
     private Map<Integer, Student> students = new HashMap<>();
 
     private AtomicInteger idCounter = new AtomicInteger();
+
     @Autowired
     private StudentService studentService;
 
     @GetMapping
-    public List<Student> getStudents(final @RequestParam(name ="firstName", required = false) String firstName) {
-        if (firstName == null){
-            return  studentService.findAll();
+    public List<Student> getStudents(final @RequestParam(name = "firstName", required = false) String firstName) {
+        if (firstName == null) {
+            return studentService.findAll();
         }
         return studentService.getAllByFirstName(firstName);
 

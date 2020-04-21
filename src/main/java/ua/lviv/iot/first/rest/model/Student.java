@@ -19,20 +19,18 @@ public class Student {
     @JoinColumn(name = "group_id")
     @JsonIgnoreProperties("students")
     private Group group;
+
     @JsonIgnoreProperties("students")
     @ManyToMany(mappedBy = "students")
     private Set<Subject> subjects;
 
-
     public Student() {
     }
-
 
     public Student(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
 
     public Integer getId() {
         return id;
@@ -41,7 +39,6 @@ public class Student {
     public void setId(Integer id) {
         this.id = id;
     }
-
 
     public String getFirstName() {
         return firstName;

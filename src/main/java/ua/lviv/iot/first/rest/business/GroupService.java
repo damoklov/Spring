@@ -6,6 +6,7 @@ import ua.lviv.iot.first.rest.dataaccess.GroupRepository;
 import ua.lviv.iot.first.rest.model.Group;
 
 import java.util.List;
+
 @Service
 public class GroupService {
 

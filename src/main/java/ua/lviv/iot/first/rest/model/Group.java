@@ -7,7 +7,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "\"group\"")
-
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
@@ -22,7 +21,6 @@ public class Group {
     private Set<Student> students;
 
     public Group() {
-
     }
 
     public Integer getId() {

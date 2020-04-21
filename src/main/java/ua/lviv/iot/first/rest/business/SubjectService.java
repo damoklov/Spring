@@ -6,10 +6,12 @@ import ua.lviv.iot.first.rest.dataaccess.SubjectRepository;
 import ua.lviv.iot.first.rest.model.Subject;
 
 import java.util.List;
+
 @Service
 public class SubjectService {
     @Autowired
     public SubjectRepository subjectRepository;
+
     public List<Subject> findAll() {
         return subjectRepository.findAll();
     }
