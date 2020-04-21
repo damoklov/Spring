@@ -17,10 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RestController
 public class StudentsController {
 
-
     private Map<Integer, Student> students = new HashMap<>();
-
-    private AtomicInteger idCounter = new AtomicInteger();
 
     @Autowired
     private StudentService studentService;
